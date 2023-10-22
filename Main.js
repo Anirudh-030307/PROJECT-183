@@ -20,14 +20,6 @@ import Filter3 from "../components/Filter3";
 import Filter4 from "../components/Filter4";
 import Filter5 from "../components/Filter5";
 
-const data = [
-  { id: "crown-pic1", src: require("../assets/crown-pic1.png") },
-  { id: "crown-pic2", src: require("../assets/crown-pic2.png") },
-  { id: "crown-pic3", src: require("../assets/crown-pic3.png") },
-  { id: "flower-pic1", src: require("../assets/flower-pic1.png") },
-  { id: "flower-pic2", src: require("../assets/flower-pic2.png") }
-];
-
 export default class Main extends Component {
   constructor(props) {
     super(props);
@@ -84,19 +76,6 @@ export default class Main extends Component {
             onFacesDetected={this.onFacesDetected}
             onFacesDetectionError={this.onFacesDetectionError}
           />
-          {this.state.faces.map(face => {
-            if (this.state.current_filter === "crown-pic1") {
-              return <Filter1 key={face.faceID} face={face} />;
-            } else if (this.state.current_filter === "crown-pic2") {
-              return <Filter2 key={face.faceID} face={face} />;
-            } else if (this.state.current_filter === "crown-pic3") {
-              return <Filter3 key={face.faceID} face={face} />;
-            } else if (this.state.current_filter === "flower-pic1") {
-              return <Filter4 key={face.faceID} face={face} />;
-            } else if (this.state.current_filter === "flower-pic2") {
-              return <Filter5 key={face.faceID} face={face} />;
-            }
-          })}
         </View>
         <View style={styles.lowerContainer}>
           <View style={styles.lowerTopContainer}></View>
